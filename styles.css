@@ -1,0 +1,196 @@
+:root {
+    /* primary  */
+    --light_red: hsla(0, 100%, 67%);
+    --orange_yellow: hsl(39, 100%, 56%);
+    --green_teal: hsl(166, 100%, 37%);
+    --cobalt_blue: hsl(234, 85%, 45%);
+
+    /* Tranparent */
+    --light_red-bg: hsla(0, 100%, 67%, 0.1);
+    --orange_yellow-bg: hsl(39, 100%, 56%, 0.1);
+    --green_teal-bg: hsl(166, 100%, 37%, 0.1);
+    --cobalt_blue-bg: hsl(234, 85%, 45%, 0.1);
+
+    /* gradients  */
+    /* background */
+    --light_slate_blue: hsl(252, 100%, 67%);
+    --light_royal_blue: hsl(241, 81%, 54%);
+
+    /* circle */
+    --violet_blue: hsla(256, 72%, 46%, 1);
+    --persian_blue: hsla(241, 72%, 46%, 0);
+
+    /* neutral  */
+    --white: hsl(0, 0%, 100%);
+    --pale_blue: hsl(221, 100%, 96%);
+    --light_lavender: hsl(241, 100%, 89%);
+    --dark_gray_blue: hsl(224, 30%, 27%);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-size: 18px;
+}
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+    height: 100vh;
+    font-family: 'Hanken Grotesk', sans-serif;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(2, 350px);
+    grid-template-rows: 500px;
+    border-radius: 24px;
+    box-shadow: 4px 4px 24px 4px var(--pale_blue);
+}
+
+.result, .summary{
+    border-radius: 24px;
+    padding: 2rem;
+}
+
+.result {
+    background: linear-gradient(var(--light_slate_blue), var(--light_royal_blue));
+    text-align: center;
+    display: grid;
+    grid-template-rows: auto 1fr auto auto;
+    align-items: center;
+    justify-items: center;
+}
+
+.result-title {
+    color: var(--light_lavender);
+    font-size: 1.4rem;
+}
+
+.result-score-circle {
+    border-radius: 50%;
+    height: 180px;
+    width: 180px;
+    background: linear-gradient(var(--violet_blue), var(--persian_blue));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+}
+
+.result-score {
+    color: var(--white);
+    font-size: 3.5rem;
+    font-weight: 800;
+}
+
+.result-outof {
+    color: var(--light_lavender);
+}
+
+.result-grade {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--white);
+    padding-bottom: 1rem;
+}
+
+.result-rank {
+    color: var(--light_lavender);
+}
+
+.summary {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+.summary-title {
+    color: var(--dark_gray_blue);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.summary-scores {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+.scores {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    padding: 0 1rem;
+    border-radius: 12px;
+}
+
+.scores:nth-child(1) {
+    background-color: var(--light_red-bg);
+    color: var(--light_red);
+}
+
+.scores:nth-child(2) {
+    background-color: var(--orange_yellow-bg);
+    color: var(--orange_yellow);
+}
+
+.scores:nth-child(3) {
+    background-color: var(--green_teal-bg);
+    color: var(--green_teal);
+}
+
+.scores:nth-child(4) {
+    background-color: var(--cobalt_blue-bg);
+    color: var(--cobalt_blue);
+}
+
+.score-type {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.score {
+    color: var(--dark_gray_blue);
+    font-weight: 700;
+}
+
+.score > span {
+    color: grey;
+}
+
+.summary button {
+    background-color: var(--dark_gray_blue);
+    color: var(--white);
+    border: none;
+    border-radius: 24px;
+    padding: 12px 0;
+    margin-top: 2rem;
+}
+
+.summary button:hover {
+    background: linear-gradient(var(--light_slate_blue), var(--light_royal_blue));
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+@media screen and (max-width: 660px) {
+    main {
+        height: 100%;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, 1fr);
+    }
+
+    .result {
+        border-radius: 0 0 24px 24px;
+    }
+}
