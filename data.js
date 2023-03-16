@@ -13,6 +13,7 @@ async function getData() {
 
         const img = document.createElement('img');
         img.src = item.icon;
+        img.alt = "Icon for category"
         category.appendChild(img);
         category.innerHTML += item.category;
         scores.appendChild(category);
